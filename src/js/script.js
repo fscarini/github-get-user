@@ -1,11 +1,15 @@
+import { getUser } from "/src/js/services/user.js"
+import { getRepos } from "/src/js/services/repositories.js"
+
 let userName
-let searchButton = document.querySelector("#btn-search").addEventListener("click", () => {
+
+document.querySelector("#btn-search").addEventListener("click", () => {
     userName = document.querySelector('#input-search').value
     getUserProfile()
     getUserRepos()
 })
 
-let inputSearch = document.querySelector('#input-search').addEventListener("keyup", (e) => {
+document.querySelector('#input-search').addEventListener("keyup", (e) => {
     userName = e.target.value
     const key = e.which || e.keyCode
     const isEnterPressered = key === 13
@@ -13,37 +17,7 @@ let inputSearch = document.querySelector('#input-search').addEventListener("keyu
         getUserProfile()
         getUserRepos()
     }
-
 })
-
-async function getUser(user) {
-    try {
-        const response = await fetch(`https://api.github.com/users/${user}`)
-        if (response.ok) {
-            const data = await response.json()
-            return data
-        } else {
-            console.log("Erro na resposta da API", response.status)
-        }
-    } catch (err) {
-        console.error("Erro na requisição", err)
-    }
-}
-
-async function getRepos(user) {
-    try {
-        const response = await fetch(`https://api.github.com/users/${user}/repos`)
-        if (response.ok) {
-            const data = await response.json()
-            const sortedRepos = data.sort((a, b) => new Date(b.created_at) - new Date(a.created_at)) // Ordena os repositórios por data de criação
-            return await sortedRepos
-        } else {
-            console.log("Erro na resposta da API", response.status)
-        }
-    } catch (err) {
-        console.error("Erro na requisição", err)
-    }
-}
 
 async function getUserProfile() {
     getUser(userName).then(userData => {
