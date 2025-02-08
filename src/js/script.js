@@ -62,19 +62,11 @@ async function getUserRepos() {
     getRepos(userName).then(userRepos => {
         let userActivity = `<div class="repositories">
                             <h2>Últimos 10 repositórios de <strong>@${userName}</strong></h2>
-                                <ul>
-                                    <li><a href="${userRepos[0].html_url}" target="_blank">${userRepos[0].name}</a></li>
-                                    <li><a href="${userRepos[1].html_url}" target="_blank">${userRepos[1].name}</a></li>
-                                    <li><a href="${userRepos[2].html_url}" target="_blank">${userRepos[2].name}</a></li>
-                                    <li><a href="${userRepos[3].html_url}" target="_blank">${userRepos[3].name}</a></li>
-                                    <li><a href="${userRepos[4].html_url}" target="_blank">${userRepos[4].name}</a></li>
-                                    <li><a href="${userRepos[5].html_url}" target="_blank">${userRepos[5].name}</a></li>
-                                    <li><a href="${userRepos[6].html_url}" target="_blank">${userRepos[6].name}</a></li>
-                                    <li><a href="${userRepos[7].html_url}" target="_blank">${userRepos[7].name}</a></li>
-                                    <li><a href="${userRepos[8].html_url}" target="_blank">${userRepos[8].name}</a></li>
-                                    <li><a href="${userRepos[9].html_url}" target="_blank">${userRepos[9].name}</a></li>
-                                </ul>
-                        </div>`
+                            <ul>`
+        for (let i = 0; i < 10; i++) {
+            userActivity += `<li><a href="${userRepos[i].html_url}" target="_blank">${userRepos[i].name}</a></li>`
+        }
+        userActivity += `</ul></div>`
         document.querySelector(".profile-data").innerHTML += userActivity
     })
 }
