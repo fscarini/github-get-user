@@ -29,6 +29,21 @@ async function getUser(user){
     }
 }
 
+async function getRepos(user){
+    try{
+        const response = await fetch(`https://api.github.com/users/${user}/repos`)
+        if(response.ok){
+            const data = await response.json()
+            console.log(await data)
+            // return data
+        }else{
+            console.log("Erro na resposta da API", response.status)
+        }
+    }catch(err){
+        console.error("Erro na requisição", err)
+    }
+}
+
 async function getUserProfile(){
     getUser(userName).then(userData =>{
         let userInfo = `<img src="${userData.avatar_url} " alt="Foto de perfil do usuário"
