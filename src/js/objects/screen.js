@@ -23,7 +23,9 @@ const screen = {
 
     renderUser(user) {
         this.userProfile.innerHTML = `<div class="info">
-                                            <img src="${user.avatarUrl} " alt="Foto de perfil do usuário" class="avatar-url">
+                                            <a href="${user.userUrl}" target="_blank">
+                                                <img src="${user.avatarUrl}" alt="Foto de perfil do usuário" class="avatar-url">
+                                            </a>
                                             <div class="data">
                                                 <h1>${user.name ?? 'Usuário sem nome 😴'}</h1>
                                                 <p>${user.bio ?? 'Usuário sem bio 😴'}</p>

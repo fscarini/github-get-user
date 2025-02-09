@@ -1,5 +1,6 @@
 let user = {
     avatarUrl: "",
+    userUrl:"",
     name:"",
     bio:"",
     followers:"",
@@ -9,6 +10,7 @@ let user = {
 
     setInfo(githubUser){
         this.avatarUrl = githubUser.avatar_url
+        this.userUrl = githubUser.html_url
         this.name = githubUser.name
         this.bio = githubUser.bio
         this.followers = githubUser.followers

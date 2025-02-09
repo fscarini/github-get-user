@@ -4,7 +4,7 @@ import { user } from "./objects/user.js"
 import { screen } from "./objects/screen.js"
 import { isEmpty } from "./variables.js"
 
-let userName =
+let userName
 
 document.querySelector("#btn-search").addEventListener("click", () => {
     userName = document.querySelector('#input-search').value
