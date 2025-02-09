@@ -11,6 +11,16 @@ const screen = {
                                         </div>`
     },
 
+    renderMaxRequests() {
+        this.userProfile.innerHTML = `<div class="info">
+                                            <img src="src/img/what-emoji.png" alt="Emoji by the way">
+                                            <div class="data">
+                                                <h1>Vai com calma, meu chapa!</h1>
+                                                <p>O máximo de requests diários foi atingido! Volte amanhã ou peça para o ADM autenticar essa bagaça.</p>
+                                            </div>
+                                        </div>`
+    },
+
     renderInvalidUser() {
         this.userProfile.innerHTML = `<div class="info">
                                             <img src="src/img/sad-emoji.png" alt="Emoji triste">
