@@ -87,6 +87,13 @@ img {
   
   .container .profile-data .info .data{
     width: 80%;
+    margin-bottom: 20px;
+  }
+
+  .container .profile-data .info .data .follow-section{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
   }
   
   .container .profile-data .info .avatar-url{
@@ -109,11 +116,15 @@ img {
     font-size: 15px;  
     font-weight: 400;
     line-height: 23px;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
   }
 
   strong{
     font-weight: 800;
+  }
+
+  .container .profile-data .info .data .follow-section h3{
+    font-size: 1.1rem;
   }
   
   /* REPOSITORIES */

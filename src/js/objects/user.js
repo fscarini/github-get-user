@@ -2,6 +2,8 @@ let user = {
     avatarUrl: "",
     name:"",
     bio:"",
+    followers:"",
+    following:"",
     respositories:[],
     repositoriesUrl:[],
 
@@ -9,6 +11,8 @@ let user = {
         this.avatarUrl = githubUser.avatar_url
         this.name = githubUser.name
         this.bio = githubUser.bio
+        this.followers = githubUser.followers
+        this.following = githubUser.following
     },
 
     setRepositories(reps){

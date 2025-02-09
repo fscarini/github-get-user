@@ -6,6 +6,7 @@ async function fetchUser(user) {
         const response = await fetch(`${baseUrl}/${user}`)
         if (response.ok) {
             const data = await response.json()
+            console.log(data)
             return data
         } else {
             return screen.renderInvalidUser()

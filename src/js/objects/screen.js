@@ -27,6 +27,10 @@ const screen = {
                                             <div class="data">
                                                 <h1>${user.name ?? 'Usuário sem nome 😴'}</h1>
                                                 <p>${user.bio ?? 'Usuário sem bio 😴'}</p>
+                                                <div class="follow-section">
+                                                    <h3>Seguidores: <strong>${user.followers}</strong><h3>
+                                                    <h3>Seguindo: <strong>${user.following}</strong><h3>
+                                                </div>
                                             </div>
                                         </div>`
     },
