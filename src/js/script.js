@@ -1,7 +1,7 @@
-import { fetchUser } from "/src/js/services/user.js"
-import { fetchRepos } from "/src/js/services/repositories.js"
-import { user } from "/src/js/objects/user.js"
-import { screen } from "/src/js/objects/screen.js"
+import { fetchUser } from "./services/user.js"
+import { fetchRepos } from "./services/repositories.js"
+import { user } from "./objects/user.js"
+import { screen } from "./objects/screen.js"
 
 let userName
 
