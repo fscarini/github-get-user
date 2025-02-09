@@ -2,11 +2,13 @@ import { fetchUser } from "./services/user.js"
 import { fetchRepos } from "./services/repositories.js"
 import { user } from "./objects/user.js"
 import { screen } from "./objects/screen.js"
+import { isEmpty } from "./variables.js"
 
 let userName
 
 document.querySelector("#btn-search").addEventListener("click", () => {
     userName = document.querySelector('#input-search').value
+    if(isEmpty(userName)) return
     getUser()
     getRepositories()
 })
@@ -16,6 +18,7 @@ document.querySelector('#input-search').addEventListener("keyup", (e) => {
     const key = e.which || e.keyCode
     const isEnterPressered = key === 13
     if (isEnterPressered) {
+        if(isEmpty(userName)) return
         getUser()
         getRepositories()
     }

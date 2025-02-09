@@ -1,13 +1,33 @@
 const screen = {
     userProfile: document.querySelector(".profile-data"),
 
+    renderEmptyUser() {
+        this.userProfile.innerHTML = `<div class="info">
+                                            <img src="src/img/angry-emoji.png" alt="Emoji com raiva">
+                                            <div class="data">
+                                                <h1>Calma lá, meu amigo!</h1>
+                                                <p>Digite no campo de busca o 'username' de um usuário do GitHub</p>
+                                            </div>
+                                        </div>`
+    },
+
+    renderInvalidUser() {
+        this.userProfile.innerHTML = `<div class="info">
+                                            <img src="src/img/sad-emoji.png" alt="Emoji triste">
+                                            <div class="data">
+                                                <h1>Poxa... Que pena!</h1>
+                                                <p>Este usuário não está cadastrado no banco de dados do GitHub</p>
+                                            </div>
+                                        </div>`
+    },
+
     renderUser(user) {
         this.userProfile.innerHTML = `<div class="info">
-                                        <img src="${user.avatarUrl} " alt="Foto de perfil do usuário"
-                                        <div class="data">
-                                        <h1>${user.name ?? 'Usuário sem nome 😴'}</h1>
-                                        <p>${user.bio ?? 'Usuário sem bio 😴'}</p>
-                                        </div>
+                                            <img src="${user.avatarUrl} " alt="Foto de perfil do usuário" class="avatar-url">
+                                            <div class="data">
+                                                <h1>${user.name ?? 'Usuário sem nome 😴'}</h1>
+                                                <p>${user.bio ?? 'Usuário sem bio 😴'}</p>
+                                            </div>
                                         </div>`
     },
 

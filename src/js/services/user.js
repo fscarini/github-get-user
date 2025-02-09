@@ -1,4 +1,5 @@
 import { baseUrl } from "../variables.js"
+import { screen } from "../objects/screen.js"
 
 async function fetchUser(user) {
     try {
@@ -7,7 +8,7 @@ async function fetchUser(user) {
             const data = await response.json()
             return data
         } else {
-            console.log("Erro na resposta da API", response.status)
+            return screen.renderInvalidUser()
         }
     } catch (err) {
         console.error("Erro na requisição", err)

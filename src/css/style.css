@@ -89,10 +89,14 @@ img {
     width: 80%;
   }
   
-  .container .profile-data .info img{
+  .container .profile-data .info .avatar-url{
     width: 50%;
     border-radius: 100%;
     border: 10px solid hotpink;
+  }
+
+  .container .profile-data .info img{
+    width: 50%;
   }
   
   .container .profile-data .info h1{
