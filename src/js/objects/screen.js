@@ -58,7 +58,10 @@ const screen = {
             <h2>Últimos ${reps.repositories.length} repositórios de <strong>@${userName}</strong></h2>
             <ul>`
             for (let i = 0; i < reps.repositories.length; i++) {
-                userActivity += `<li><a href="${reps.repositoriesUrl[i]}" target="_blank">${reps.repositories[i]}</a></li>`
+                userActivity += `<li>
+                                    <a href="${reps.repositories[i].repositorieUrl}" target="_blank">${reps.repositories[i].repositorieName}</a>
+                                    
+                                </li>`
             }
             userActivity += `</ul></div>`
             this.userProfile.innerHTML += userActivity

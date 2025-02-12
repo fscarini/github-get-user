@@ -6,7 +6,6 @@ let user = {
     followers:"",
     following:"",
     respositories:[],
-    repositoriesUrl:[],
     events:[],
 
     setInfo(githubUser){
@@ -19,8 +18,10 @@ let user = {
     },
 
     setRepositories(reps){
-        this.repositories = reps.map(rep => rep.name)
-        this.repositoriesUrl = reps.map(rep => rep.html_url)
+        this.repositories = reps.map(rep => ({
+            repositorieName: rep.name,
+            repositorieUrl: rep.html_url,
+        }))
     },
 
     setEvents(events){
