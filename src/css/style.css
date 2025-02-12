@@ -141,9 +141,13 @@ img {
   }
   
   /* REPOSITORIES */
+
+  .container .profile-data .repositories{
+    margin-bottom: 40px;
+  }
   
   .container .profile-data .repositories h2{
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-align: center;
   }
   
@@ -170,6 +174,43 @@ img {
   .container .profile-data.hide{
     display: none;
   }
+
+  /* EVENTS */
+
+  .container .profile-data .events h2{
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .container .profile-data .events ul li{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid grey;  
+    margin: 20px;
+    border-radius: 7px;
+    transition: 0.3s ease-in-out;
+  }
+
+  .container .profile-data .events ul > li > a{
+    max-width: 100%;
+    align-self: center;
+    transition: font-size 0.2s ease-in-out, font-weight 0.2s ease-in-out;
+  }
+
+  .container .profile-data .events ul li:hover{
+    background-color:hotpink;
+    color: #FFFFFF;
+  }
+
+  .container .profile-data .events ul li:hover a{
+    font-size: 20px;
+    font-weight: 800;
+  }
+
+  /* MEDIA-QUERIES */
   
   @media (max-width: 1280px) {
     .container {

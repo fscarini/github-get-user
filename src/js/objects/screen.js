@@ -64,6 +64,28 @@ const screen = {
             this.userProfile.innerHTML += userActivity
         }
 
+    },
+
+    renderEvents(user, userName){
+        if(user.events.length <= 0){
+            let userWithoutEvents = `<div class="repositories">
+                                            <h2>Caramba, este usuário não vem dando commits! 😓</h2>
+                                        </div`
+            this.userProfile.innerHTML += userWithoutEvents
+        } else {
+            let userEvents = `<div class="events">
+                                <h2>Últimos ${user.events.length} eventos de <strong>@${userName}</strong></h2>
+                                <ul>`
+            for (let i = 0; i< user.events.length; i++){
+                userEvents += `<li alt="${user.events[i].type}" title="Type: ${user.events[i].type}">
+                                    <a href="https://github.com/${user.events[i].repositorie.name}" target="_blank">${user.events[i].repositorie.name}</a>
+                                    <p>${user.events[i].action}</p>
+                                </li>`
+            }
+            userEvents += `</ul></div>`
+            this.userProfile.innerHTML += userEvents
+
+        }
     }
 }
 
