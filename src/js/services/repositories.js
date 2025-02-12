@@ -6,8 +6,8 @@ async function fetchRepos(user) {
         if (response.ok) {
             const data = await response.json()
             const sortedRepos = data
-            .sort((a, b) => new Date(b.created_at) - new Date(a.created_at)) // Ordena os repositórios por data de criação
-            .slice(0, 10) // Pega os primeiros dez elementos
+            .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+            .slice(0, 10)
             return await sortedRepos
         } else {
             console.log("Erro na resposta da API", response.status)

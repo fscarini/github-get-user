@@ -37,6 +37,7 @@ async function getUser() {
 async function getRepositories(){
     const response = await fetchRepos(userName)
     user.setRepositories(response)
+    console.log(user.repositories)
     screen.renderRepositories(user, userName)
 }
 

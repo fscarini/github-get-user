@@ -5,7 +5,7 @@ let user = {
     bio:"",
     followers:"",
     following:"",
-    respositories:[],
+    repositories:[],
     events:[],
 
     setInfo(githubUser){
@@ -18,9 +18,23 @@ let user = {
     },
 
     setRepositories(reps){
+        const abbreviating = (rep) =>{
+            if(rep.language === null){
+                return "Linguagem não identificada"
+            }else if(rep.language === "JavaScript"){
+                return "JS"
+            }else{
+                return rep.language
+            }      
+        }
+
         this.repositories = reps.map(rep => ({
             repositorieName: rep.name,
             repositorieUrl: rep.html_url,
+            repositorieForks: rep.forks_count,
+            repositorieStars: rep.stargazers_count,
+            repositorieWatchers: rep.watchers_count,
+            repositorieLanguage: abbreviating(rep),
         }))
     },
 

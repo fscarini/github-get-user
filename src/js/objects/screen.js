@@ -16,7 +16,7 @@ const screen = {
                                             <img src="src/img/what-emoji.png" alt="Emoji by the way">
                                             <div class="data">
                                                 <h1>Vai com calma, meu chapa!</h1>
-                                                <p>O máximo de requests diários foi atingido! Volte amanhã ou peça para o ADM autenticar essa bagaça.</p>
+                                                <p>O máximo de requests neste IP foi atingido! Volte mais tarde ou peça para o ADM autenticar essa bagaça.</p>
                                             </div>
                                         </div>`
     },
@@ -59,8 +59,15 @@ const screen = {
             <ul>`
             for (let i = 0; i < reps.repositories.length; i++) {
                 userActivity += `<li>
-                                    <a href="${reps.repositories[i].repositorieUrl}" target="_blank">${reps.repositories[i].repositorieName}</a>
-                                    
+                                    <a href="${reps.repositories[i].repositorieUrl}" target="_blank">
+                                        <p>${reps.repositories[i].repositorieName}<p>
+                                        <ul>
+                                            <li>🍴${reps.repositories[i].repositorieForks}</li>
+                                            <li>⭐${reps.repositories[i].repositorieStars}</li>
+                                            <li>👀${reps.repositories[i].repositorieWatchers}</li>
+                                            <li>👨‍💻${reps.repositories[i].repositorieLanguage}</li>
+                                        </ul>                                        
+                                    </a>
                                 </li>`
             }
             userActivity += `</ul></div>`
