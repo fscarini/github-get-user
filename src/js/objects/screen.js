@@ -84,7 +84,7 @@ const screen = {
             this.userProfile.innerHTML += userWithoutEvents
         } else {
             let userEvents = `<div class="events">
-                                <h2>Últimos ${user.events.length} eventos de <strong>@${userName}</strong></h2>
+                                <h2>Últimos ${user.events.length} eventos de <strong>@${userName}</strong> nos últimos 30 dias</h2>
                                 <ul>`
             for (let i = 0; i< user.events.length; i++){
                 userEvents += `<li alt="${user.events[i].type}" title="Type: ${user.events[i].type}">

@@ -37,12 +37,11 @@ async function getUser() {
 async function getRepositories(){
     const response = await fetchRepos(userName)
     user.setRepositories(response)
-    console.log(user.repositories)
     screen.renderRepositories(user, userName)
 }
 
 async function getEvents(){
     const response = await fetchEvents(userName)
-    user.setEvents(response)
+    user.setEvents(response)   
     screen.renderEvents(user, userName)
 }
